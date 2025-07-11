@@ -1,0 +1,8 @@
+
+project_id = "qmhovxtnavxbuonhnmwl"
+
+[functions.process-order]
+verify_jwt = false
+
+[functions.create-admin]
+verify_jwt = false
