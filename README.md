@@ -1,73 +1,99 @@
-# Welcome to your Lovable project
+Topmos Farms E-Commerce Website (TypeScript + Tailwind)
+A modern, performant, and type-safe e-commerce website built for Topmos Farms.
 
-## Project info
+Live Website: https://topmosfarmschips.netlify.app
 
-**URL**: https://lovable.dev/projects/24963418-d071-4376-8b50-e853a3818a4e
+🚀 Built With
+Framework: Next.js / Vite / [Astro] // I'll fill this in
 
-## How can I edit this code?
+Language: TypeScript
 
-There are several ways of editing your application.
+Styling: Tailwind CSS
 
-**Use Lovable**
+E-commerce: Snipcart
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/24963418-d071-4376-8b50-e853a3818a4e) and start prompting.
+Deployment: Netlify
 
-Changes made via Lovable will be committed automatically to this repo.
+📦 Project Structure
+(I will generate this accurately based on your zip file)
 
-**Use your preferred IDE**
+text
+topmos-farms/
+├── public/
+│   ├── images/
+│   └── favicon.ico
+├── src/
+│   ├── components/          # Reusable React components (Header, ProductCard, etc.)
+│   │   ├── ui/             # Basic UI components (Button, Modal)
+│   │   └── ...
+│   ├── contexts/           # React context for state management (e.g., CartContext)
+│   ├── data/               # Static product data (e.g., products.ts)
+│   ├── pages/              # App routes (for Next.js) or /routes for others
+│   ├── styles/
+│   │   └── globals.css     # Importing Tailwind; global styles
+│   └── types/              # Custom TypeScript type definitions
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+└── ...
+🛠️ Development
+Prerequisites
+Node.js (v18 or higher)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+npm, yarn, or pnpm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Installation
+Clone the repository and install dependencies:
 
-Follow these steps:
+bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+Environment Variables: Duplicate .env.example to .env.local and fill in your keys.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+bash
+# Example (I will get the exact names from your code)
+NEXT_PUBLIC_SNIPCART_API_KEY=your_public_key_here
+# ... other variables
+Run the development server:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+bash
 npm run dev
-```
+# or
+yarn dev
+Open http://localhost:3000 (or another port) in your browser.
 
-**Edit a file directly in GitHub**
+Building for Production
+bash
+npm run build
+# then
+npm run start
+🔧 Key Features & Implementation Details
+(I will detail how you implemented specific things, for example:)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+State Management: How the shopping cart state is handled (e.g., using a CartContext provider).
 
-**Use GitHub Codespaces**
+Product Data: Where the array of products is defined and how it's typed with TypeScript interfaces.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Snipcart Integration: How the Snipcart SDK is loaded and interacted with.
 
-## What technologies are used for this project?
+📝 Content Management
+Adding a New Product
+Add the product image to public/images/.
 
-This project is built with:
+Open src/data/products.ts.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Add a new object to the products array, following the existing Product type interface. All fields will be type-checked.
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/24963418-d071-4376-8b50-e853a3818a4e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+typescript
+{
+  id: 'new-spicy-chips',
+  name: 'Spicy Chili Chips',
+  price: 6.49,
+  description: 'A new delicious and spicy flavor!',
+  imageUrl: '/images/product-spicy.jpg', // Path from public folder
+  // ... other fields as defined in your type
+}
+The product will automatically appear on the page if it's mapped from this data array.
